@@ -1,7 +1,7 @@
 FROM maven:3.6.0-jdk-11-slim AS build
 COPY . .
-RUN mvn pom.xml clean package \
-Run mvn pom.xml install
+CMD mvn pom.xml clean package
+CMD mvn pom.xml install
 FROM openjdk:17
 MAINTAINER baeldung.com
 
